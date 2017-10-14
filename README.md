@@ -10,5 +10,6 @@ This boilerplate provides pre-configured:
 4. Pre-configured jasmine spec reporter
 5. Jasmine Node Debug for debugging unit tests.
 6. Templates demonstrating nested routes.
+7. Preconfigured istanbul test coverage.
 
 ## How to use? 

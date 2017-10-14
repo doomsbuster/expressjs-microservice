@@ -1,0 +1,44 @@
+{
+  "name": "expressjs-microservice",
+  "version": "0.0.1",
+  "author": "Mr. Doomsbuster",
+  "description": "An opinionated minimalist boilerplate for expressjs based microservices.",
+  "license": "WTFPL",
+  "keywords": [
+    "expressjs",
+    "microservices",
+    "boilerplate",
+    "expressjs-boilerplate"
+  ],
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "NODE_ENV=test istanbul cover -x **/spec/** --print detail ./node_modules/.bin/jasmine JASMINE_CONFIG_PATH=./spec/support/jasmine.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doomsbuster/expressjs-microservice.git"
+  },
+  "dependencies": {
+    "body-parser": "~1.10.1",
+    "cookie-parser": "~1.3.3",
+    "debug": "~2.1.1",
+    "express": "~4.11.0",
+    "hbs": "~2.8.0",
+    "helmet": "^3.8.1",
+    "morgan": "~1.5.1",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5",
+    "serve-favicon": "~2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
+    "jasmine": "^2.8.0",
+    "jasmine-node": "^1.14.5",
+    "jasmine-node-debug": "^0.1.1",
+    "jasmine-spec-reporter": "^4.2.1",
+    "sinon": "^3.2.1",
+    "supertest": "^3.0.0"
+  }
+}

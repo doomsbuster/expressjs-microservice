@@ -22,8 +22,9 @@ describe('Route /posts', function() {
                     helper.end(err, res, done);
                 });
         });
+
         it('should return 500', function(done) {
-            stub = sinon.stub(service, 'getAllPosts').rejects(Error('oops'));
+            stub = sinon.stub(service, 'getAllPosts').rejects();
             request(require('../../app'))
                 .get('/api/posts')
                 .expect(500)
@@ -31,6 +32,7 @@ describe('Route /posts', function() {
                     helper.end(err, res, done);
                 });
         });
+        
         afterEach(function () {
         	stub.restore();
         })

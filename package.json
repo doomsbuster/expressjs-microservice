@@ -13,7 +13,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "NODE_ENV=test istanbul cover -x **/spec/** --print detail ./node_modules/.bin/jasmine JASMINE_CONFIG_PATH=./spec/support/jasmine.json"
+    "test": "NODE_ENV=test istanbul cover -x **/spec/** --print detail ./node_modules/.bin/jasmine JASMINE_CONFIG_PATH=./spec/support/jasmine.json",
+    "integtest": "NODE_ENV=test ./node_modules/.bin/jasmine JASMINE_CONFIG_PATH=./spec/support/jasmine-debug.json"
   },
   "repository": {
     "type": "git",

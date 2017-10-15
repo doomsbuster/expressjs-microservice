@@ -1,5 +1,5 @@
 'use strict';
-import request from 'request-promise-native';
+var request = require('request-promise-native');
 
 module.exports = {
 	getAllPosts: function() {

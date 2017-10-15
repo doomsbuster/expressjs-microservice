@@ -1,9 +1,8 @@
 'use strict';
 
-import express from 'express';
-import postsEndpoint from 'posts';
-import commentsEndpoint from 'comments';
-import repoEndpoint from 'repo/repo';
+var express = require('express');
+var postsEndpoint = require('./posts');
+var repoEndpoint = require('./repo/repo');
 
 var router = express.Router();
 
@@ -16,7 +15,6 @@ var router = express.Router();
 // API Route specification
 //---------------------------------------------------------------
 router.use('/posts', postsEndpoint);
-router.use('/comments', commentsEndpoint);
 router.use('/repo', repoEndpoint);
 
 module.exports = router;

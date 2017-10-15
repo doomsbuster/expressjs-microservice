@@ -1,25 +1,27 @@
 'use strict';
-import express from 'express';
-import postService from '../services/PostsService';
+
+var express = require('express');
+var postService = require('../services/PostsService');
 
 let router = express.Router();
 let sampleError = {
-	type: 'ErrorType'
+	type: 'ErrorType',
 	message: 'Error occured',
 	messageCode: 1052 // Optional message code (numeric)
 };
 
 router.use('/', function(req, res) {
 	try {
-		var promise = postsService.getAllPosts();
+		var promise = postService.getAllPosts();
 
 		promise.then(function(data) {
 			// Do something (if required) with the data, then send it to the client
-			res.send(200).send(data);
+			res.status(200).send(data);
 		});
 
 		promise.catch(function(error) {
 			// Never send stack traces to the client.
+			console.log('Failed')
 			res.status(500).send(sampleError);
 		});
 	} catch (e) {
@@ -31,11 +33,11 @@ router.use('/', function(req, res) {
 
 router.use('/:postId', function(req, res) {
 	try {
-		var promise = postsService.getPost(req.params.postId);
+		var promise = postService.getPost(req.params.postId);
 
 		promise.then(function(data) {
 			// Do something (if required) with the data, then send it to the client
-			res.send(200).send(data);
+			res.status(200).send(data);
 		});
 
 		promise.catch(function(error) {
@@ -52,11 +54,11 @@ router.use('/:postId', function(req, res) {
 
 router.use('/post', function(req, res) {
 	try {
-		var promise = postsService.getPost(req.query.postId);
+		var promise = postService.getPost(req.query.postId);
 		
 		promise.then(function(data) {
 			// Do something (if required) with the data, then send it to the client
-			res.send(200).send(data);
+			res.status(200).send(data);
 		});
 
 		promise.catch(function(error) {

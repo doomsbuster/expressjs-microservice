@@ -2,6 +2,7 @@
   "name": "expressjs-microservice",
   "version": "0.0.1",
   "author": "Mr. Doomsbuster",
+  "main":"app.js",
   "description": "An opinionated minimalist boilerplate for expressjs based microservices.",
   "license": "WTFPL",
   "keywords": [
@@ -13,7 +14,6 @@
     "api",
     "rest"
   ],
-  "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=development node ./bin/www",
     "test": "cross-env NODE_ENV=test istanbul cover -x **/spec/** --print detail ./node_modules/.bin/jasmine JASMINE_CONFIG_PATH=./spec/support/jasmine.json",

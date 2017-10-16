@@ -5,6 +5,7 @@
   "main":"app.js",
   "description": "An opinionated minimalist boilerplate for expressjs based microservices.",
   "license": "WTFPL",
+  "homepage":"https://ashishdesai.com",
   "keywords": [
     "expressjs",
     "microservices",

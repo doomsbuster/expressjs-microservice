@@ -1,11 +1,11 @@
 {
   "name": "expressjs-microservice",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Mr. Doomsbuster",
-  "main":"app.js",
+  "main": "app.js",
   "description": "An opinionated minimalist boilerplate for expressjs based microservices.",
   "license": "WTFPL",
-  "homepage":"https://ashishdesai.com",
+  "homepage": "https://ashishdesai.com",
   "keywords": [
     "expressjs",
     "microservices",

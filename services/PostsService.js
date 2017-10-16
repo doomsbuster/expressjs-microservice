@@ -9,7 +9,7 @@ module.exports = {
 		return request.get(options);
 	},
 	getPost: function(postId) {
-		console.log(postId);
+		console.log('PostService::getPost()' + postId);
 		let options = {
 			url: 'https://jsonplaceholder.typicode.com/posts/' + postId
 		}

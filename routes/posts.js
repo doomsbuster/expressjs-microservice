@@ -2,6 +2,7 @@
 
 var express = require('express');
 var postService = require('../services/PostsService');
+var log = require('../utils/Logger');
 
 let router = express.Router();
 let sampleError = {
@@ -37,12 +38,56 @@ router.get('/', function(req, res) {
 
 		promise.catch(function(error) {
 			// Never send stack traces to the client.
-			console.log('Failed')
+			log.error('Failed')
 			res.status(500).send(sampleError);
 		});
 	} catch (e) {
 		// Use a good logging framework for logging to file
-		console.log('Route /posts/ failed with error', e);
+		log.error('Route /posts/ failed with error', e);
+		res.status(500).send(sampleError);
+	}
+});
+
+/**
+ * @swagger
+ * /posts/post:
+ *   get:
+ *     summary: Get details of a post
+ *     description: Returns details of a single post
+ *     tags:
+ *       - Posts
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: postId
+ *         description: ID of the post to fetch
+ *         in: query
+ *         required: true
+ *         type: string
+ *         example: 1
+ *     responses:
+ *       200:
+ *         description: Successful
+ *       500:
+ *         description: Server Error
+ */
+router.get('/post', function(req, res) {
+	// This route needs to be ordered before /:postId since express will match '/post' to be path param as well
+	var promise;
+	try {
+		promise = postService.getPost(req.query.postId);
+		
+		promise.then(function(data) {
+			// Do something (if required) with the data, then send it to the client
+			res.status(200).send(data);
+		});
+
+		promise.catch(function(error) {
+			// Never send stack traces to the client.
+			res.status(500).send(sampleError);
+		});
+	} catch (e) {
+		// Use a good logging framework for logging to file
 		res.status(500).send(sampleError);
 	}
 });
@@ -85,51 +130,6 @@ router.get('/:postId', function(req, res) {
 			res.status(500).send(sampleError);
 		})
 
-	} catch (e) {
-		// Use a good logging framework for logging to file
-		res.status(500).send(sampleError);
-	}
-});
-
-/**
- * @swagger
- * /posts/postinfo:
- *   get:
- *     summary: Get details of a post
- *     description: Returns details of a single post
- *     tags:
- *       - Posts
- *     produces:
- *       - application/json
- *     parameters:
- *       - name: postId
- *         description: ID of the post to fetch
- *         in: query
- *         required: true
- *         type: string
- *         example: 1
- *     responses:
- *       200:
- *         description: Successful
- *       500:
- *         description: Server Error
- */
-router.get('/postinfo', function(req, res) {
-	var promise;
-	try {
-		console.log(req.query);
-		debugger;
-		// promise = postService.getPost(req.query.postId);
-		
-		// promise.then(function(data) {
-		// 	// Do something (if required) with the data, then send it to the client
-		// 	res.status(200).send(data);
-		// });
-
-		// promise.catch(function(error) {
-		// 	// Never send stack traces to the client.
-		// 	res.status(500).send(sampleError);
-		// });
 	} catch (e) {
 		// Use a good logging framework for logging to file
 		res.status(500).send(sampleError);

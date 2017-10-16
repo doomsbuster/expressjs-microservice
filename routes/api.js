@@ -32,6 +32,10 @@ var options = {
 				url: 'https://ashishdesai.com/license.txt'
 			}
 		},
+		schemes: [
+			'http',
+			'https'
+		],
 		basePath: '/api',
 		tags: [{
 			name: 'Posts',

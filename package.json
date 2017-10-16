@@ -1,6 +1,6 @@
 {
   "name": "expressjs-microservice",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Mr. Doomsbuster",
   "main":"app.js",
   "description": "An opinionated minimalist boilerplate for expressjs based microservices.",

@@ -53,4 +53,8 @@ app.use(function(err, req, res, next) {
     });
 });
 
+app.listen(process.env.PORT || 3000, function () {
+    log.info('Started the express microservice.');
+});
+
 module.exports = app;

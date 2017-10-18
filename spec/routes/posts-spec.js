@@ -23,13 +23,14 @@ describe('Route /posts', function() {
                 });
         });
 
-        it('should return 500', function(done) {
+        it('should return 500', function() {
+            // When rejecting a promise do not pass the done callback. FIXES issue #3.
             stub = sinon.stub(service, 'getAllPosts').rejects();
             request(require('../../app'))
                 .get('/api/posts')
                 .expect(500)
                 .end(function(err, res) {
-                    helper.end(err, res, done);
+                    helper.end(err, res);
                 });
         });
         

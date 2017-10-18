@@ -1,8 +1,8 @@
 {
   "name": "expressjs-microservice",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Mr. Doomsbuster",
-  "main": "bin/www",
+  "main": "app.js",
   "description": "An opinionated minimalist boilerplate for expressjs based microservices.",
   "license": "WTFPL",
   "homepage": "https://ashishdesai.com",
@@ -16,11 +16,11 @@
     "rest"
   ],
   "scripts": {
-    "start": "cross-env NODE_ENV=development node ./bin/www",
+    "start": "cross-env NODE_ENV=production node app.js",
     "test": "cross-env NODE_ENV=test istanbul cover -x **/spec/** --print detail ./node_modules/.bin/jasmine JASMINE_CONFIG_PATH=./spec/support/jasmine.json",
     "debugtest": "cross-env NODE_ENV=test istanbul cover -x **/spec/** --print detail ./node_modules/.bin/jasmine-node-debug JASMINE_CONFIG_PATH=./spec/support/jasmine.json",
     "integtest": "cross-env NODE_ENV=test ./node_modules/.bin/jasmine JASMINE_CONFIG_PATH=./spec/support/jasmine-integ.json",
-    "prod": "cross-env NODE_ENV=production node ./bin/www"
+    "dev": "cross-env NODE_ENV=development node app.js"
   },
   "repository": {
     "type": "git",

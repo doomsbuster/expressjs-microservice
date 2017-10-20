@@ -1,5 +1,5 @@
 install:
-  - npm install -g node-inspector
+  - npm install -g node-inspector@1.0.0
   - npm install
 script:
   - npm test

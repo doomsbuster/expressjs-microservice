@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/doomsbuster/expressjs-microservice.svg?branch=master)](https://travis-ci.org/doomsbuster/expressjs-microservice)
+
 # Why expressjs-microservice boilerplate?
 Easy to use opinionated ExpressJS based micro-service boilerplate. This boilerplate provides a solid pattern that developers can use to scaffold and start devleop a ExpressJS (NodeJS) based microservice within seconds. The boilerplate demonstrates several key design patterns that include:
 

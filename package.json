@@ -1,6 +1,6 @@
 {
   "name": "expressjs-microservice",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "author": "Mr. Doomsbuster",
   "main": "app.js",
   "description": "An opinionated minimalist boilerplate for expressjs based microservices.",
@@ -22,8 +22,7 @@
     "test": "cross-env NODE_ENV=test istanbul cover -x **/spec/** --print detail ./node_modules/.bin/jasmine JASMINE_CONFIG_PATH=./spec/support/jasmine.json",
     "debugtest": "cross-env NODE_ENV=test istanbul cover -x **/spec/** --print detail ./node_modules/.bin/jasmine-node-debug JASMINE_CONFIG_PATH=./spec/support/jasmine.json",
     "integtest": "cross-env NODE_ENV=test ./node_modules/.bin/jasmine JASMINE_CONFIG_PATH=./spec/support/jasmine-integ.json",
-    "dev": "cross-env NODE_ENV=development node app.js",
-    "install": "cp -R ./node_modules/expressjs-microservice/* ."
+    "dev": "cross-env NODE_ENV=development node app.js"
   },
   "repository": {
     "type": "git",

@@ -33,10 +33,6 @@ Boilerplate is also available as module from NPM and Yarn registry.
 
     npm install expressjs-microservice
 
-Once you have installed the module, copy the `expressjs-microservice` to your project directory.
-    
-    cp -R ./node_modules/expressjs-microservice/* .
-
 ## Getting started
 Once you have installed the boilerplate, running it is easy:
 

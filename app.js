@@ -1,7 +1,6 @@
 'use strict';
 var express = require('express');
 var path = require('path');
-var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const log = require('./utils/Logger');
@@ -14,10 +13,6 @@ var app = express();
 // view engine setup
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
-
-if (process.env.NODE_ENV === 'production') {
-    app.use(logger('combined'));
-}
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({

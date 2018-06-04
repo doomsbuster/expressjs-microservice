@@ -1,6 +1,6 @@
 {
   "name": "expressjs-microservice",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "author": "Mr. Doomsbuster",
   "main": "app.js",
   "description": "An opinionated minimalist boilerplate for expressjs based microservices.",
@@ -33,7 +33,7 @@
     "cookie-parser": "~1.3.3",
     "express": "^4.16.2",
     "hbs": "^4.0.1",
-    "request": "^2.83.0",
+    "request": "^2.87.0",
     "request-promise-native": "^1.0.5",
     "serve-favicon": "^2.4.5",
     "sinon": "^4.1.3",
